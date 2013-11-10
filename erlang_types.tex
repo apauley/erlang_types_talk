@@ -152,4 +152,34 @@ make: *** [dialyzer] Error 2
 
 \section{Proper}
 
+
+\begin{frame}{Discrepency Analyzer for Erlang}
+
+  \begin{itemize}[<+->]
+  \item A QuickCheck-inspired property-based testing tool for Erlang.
+  \item Developed by Manolis Papadakis, Eirini Arvaniti and Kostis
+    Sagonas from the National Technical University of Athens.
+  \item Has the ability to generate random tests based on type specs.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Property tests from the specs}
+
+  \begin{minted}{erlang}
+2> proper:check_specs(rsa_id_number).
+Testing rsa_id_number:checksum/1
+....................................................................................................
+OK: Passed 100 test(s).
+
+Testing rsa_id_number:citizen/1
+....................................................................................................
+OK: Passed 100 test(s).
+
+Testing rsa_id_number:gender/1
+....................................................................................................
+OK: Passed 100 test(s).
+  \end{minted}
+\end{frame}
+
 \end{document}
