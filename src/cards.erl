@@ -5,12 +5,12 @@
 -type value() :: 1..10 | jack | queen | king.
 -type card()  :: {suit(), value()}.
 
+-spec suit(card()) -> suit().
+suit({Suit, _}) -> Suit.
+
 -spec kind(card()) -> face | number.
 kind({_, A}) when A >= 1, A =< 10 -> number;
 kind(_) -> face.
-
--spec suit(card()) -> suit().
-suit({Suit, _}) -> Suit.
 
 main() ->
     number = kind({spades, 7}),

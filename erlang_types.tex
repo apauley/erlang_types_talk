@@ -74,7 +74,7 @@
 
 \begin{frame}{Using Types}
 
-  \inputminted[firstline=12, lastline=13]{erlang}{src/cards.erl}
+  \inputminted[firstline=8, lastline=9]{erlang}{src/cards.erl}
 
 \end{frame}
 
@@ -95,6 +95,33 @@
 
 \end{frame}
 
+
+\begin{frame}{Dialyzer and Types}
+
+  \inputminted[firstline=4, lastline=6]{erlang}{src/cards.erl}
+
+\end{frame}
+
+\begin{frame}{Dialyzer and Types}
+
+  \inputminted[firstline=11]{erlang}{src/cards.erl}
+
+\end{frame}
+
+\begin{frame}[fragile]{Dialyzer and Types}
+
+  \begin{minted}{erlang}
+  Checking whether the PLT .deps_plt is up-to-date... yes
+  Proceeding with analysis...
+src/cards.erl:15: Function main/0 has no local return
+src/cards.erl:18: The call cards:kind({'rubies',4})
+    breaks the contract (card()) -> 'face' | 'number'
+ done in 0m0.54s
+done (warnings were emitted)
+make: *** [dialyzer] Error 2
+  \end{minted}
+
+\end{frame}
 
 \section{Proper}
 
