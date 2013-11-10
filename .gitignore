@@ -11,3 +11,4 @@
 *.beam
 .deps_plt
 ebin
+.eunit
