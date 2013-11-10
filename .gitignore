@@ -9,3 +9,5 @@
 *.vrb
 *.pyg
 *.beam
+.deps_plt
+ebin
