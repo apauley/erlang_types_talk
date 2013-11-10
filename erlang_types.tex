@@ -67,7 +67,17 @@
 
 \begin{frame}{Declaring Types}
 
+We can declare union/sum types and product types:
+
   \inputminted[firstline=4, lastline=6]{erlang}{src/cards.erl}
+
+\end{frame}
+
+\begin{frame}{Declaring Types}
+
+Types in record definitions:
+
+  \inputminted[firstline=10]{erlang}{src/rsa_id_number.hrl}
 
 \end{frame}
 
@@ -75,6 +85,23 @@
 \begin{frame}{Using Types}
 
   \inputminted[firstline=8, lastline=9]{erlang}{src/cards.erl}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Using Types}
+
+  \begin{minted}{erlang}
+-type gender() :: male | female.
+-type rsa_id_number() :: #rsa_id_number{}.
+-export_type([rsa_id_number/0]).
+
+-spec gender(rsa_id_number()) -> gender().
+gender(#rsa_id_number{gender_digit=GenderDigit})
+  when GenderDigit >= 5 -> male;
+gender(#rsa_id_number{gender_digit=GenderDigit})
+  when GenderDigit < 5  -> female.
+  \end{minted}
 
 \end{frame}
 
