@@ -7,7 +7,7 @@
 \title[Types in Erlang]{Optional Type Specification in Erlang}
 \author{Andreas Pauley -- @apauley}
 \institute{Lambda Luminaries -- @lambdaluminary}
-\date{}
+\date{November 11, 2013}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -29,5 +29,31 @@
 \begin{frame}
   \titlepage
 \end{frame}
+
+\section{Erlang Type Overview}
+
+\begin{frame}{Dynamic, but strong}
+
+  \inputminted[firstline=5]{erlang}{src/dynamic.erl}
+
+\end{frame}
+
+\begin{frame}[fragile]{Dynamic, but strong}
+
+  \begin{minted}{erlang}
+3> 5+"6".
+** exception error: an error occurred when evaluating
+    an arithmetic expression
+     in operator  +/2
+        called as 5 + "6"
+  \end{minted}
+
+\end{frame}
+
+\section{Can we add compile-time types to Erlang?}
+
+\section{Dialyzer}
+
+\section{Proper}
 
 \end{document}
