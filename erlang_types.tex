@@ -41,7 +41,7 @@
 \begin{frame}[fragile]{Dynamic, but strong}
 
   \begin{minted}{erlang}
-3> 5+"6".
+3> 5 + "6".
 ** exception error: an error occurred when evaluating
     an arithmetic expression
      in operator  +/2
@@ -62,6 +62,22 @@
   \end{itemize}
 
 \end{frame}
+
+\section{Optional Types}
+
+\begin{frame}{Declaring Types}
+
+  \inputminted[firstline=4, lastline=6]{erlang}{src/cards.erl}
+
+\end{frame}
+
+
+\begin{frame}{Using Types}
+
+  \inputminted[firstline=12, lastline=13]{erlang}{src/cards.erl}
+
+\end{frame}
+
 
 \section{Dialyzer}
 
